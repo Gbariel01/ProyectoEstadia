@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Interface</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/styless.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">UTN refacciones</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicioTecnico.html">Servicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal del carrito -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Precio Unitario</th>
+                                <th>Total</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cartTableBody">
+                            <!-- Los productos del carrito se agregarán aquí dinámicamente -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <img src="img/sumit-saharkar-8MJ9Ys0C3Qw-unsplash.jpg" class="img-fluid rounded" alt="Imagen 1">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="img/pairach-boriboonmee-dC1fBLsEUwY-unsplash.jpg" class="img-fluid rounded" alt="Imagen 2">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="img/gaurav-kumar-Fgd_jRPl41g-unsplash.jpg" class="img-fluid rounded" alt="Imagen 3">
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="text-center">Formulario de Contacto</h2>
+        <p class="text-center">Si requieres más información, te invitamos a que te pongas en contacto con nosotros para aclarar cualquier duda que tengas referente a nuestros productos y servicios.</p>
+        <form id="contactForm" novalidate>
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombre/Empresa</label>
+                <input type="text" class="form-control" id="name" required pattern="^[a-zA-Z0-9\s]+$" minlength="3">
+                <div class="invalid-feedback">Por favor ingresa el nombre de tu empresa o tu nombre. Solo se permiten letras y números.</div>
+            </div>
+    
+            <div class="mb-3">
+                <label for="subject" class="form-label">Asunto</label>
+                <input type="text" class="form-control" id="subject" required minlength="5">
+                <div class="invalid-feedback">Por favor ingresa el asunto de tu mensaje (mínimo 5 caracteres).</div>
+            </div>
+    
+            <div class="mb-3">
+                <label for="email" class="form-label">Correo Electrónico</label>
+                <input type="email" class="form-control" id="email" value="you@email.com" required>
+                <div class="invalid-feedback">Por favor ingresa un correo electrónico válido.</div>
+            </div>
+    
+            <div class="mb-3">
+                <label for="state" class="form-label">Estado</label>
+                <select class="form-control" id="state" required>
+                    <option value="" disabled selected>Selecciona tu estado</option>
+                    <option value="CDMX">Ciudad de México</option>
+                    <option value="Jalisco">Jalisco</option>
+                    <option value="Nuevo Leon">Nuevo León</option>
+                    <option value="Guerrero">Guerrero</option>
+                    <!-- Agregar más estados aquí -->
+                </select>
+                <div class="invalid-feedback">Por favor selecciona tu estado.</div>
+            </div>
+    
+            <div class="mb-3">
+                <label for="message" class="form-label">Mensaje</label>
+                <textarea class="form-control" id="message" rows="4" required minlength="30"></textarea>
+                <div class="invalid-feedback">Tu mensaje debe tener al menos 30 caracteres.</div>
+            </div>
+    
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="privacyCheck" required>
+                <label class="form-check-label" for="privacyCheck">
+                    He leído y estoy de acuerdo con el Aviso de Privacidad.
+                </label>
+                <div class="invalid-feedback">Debes aceptar el Aviso de Privacidad para continuar.</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+
+        </form>
+    </div>
+    
+    
+
+    <div class="mt-5"></div>
+
+    
+  
+    <!-- Bootstrap JS y validación en tiempo real -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+   
+    <script>
+        // Función para manejar la validación en tiempo real
+        document.getElementById('contactForm').addEventListener('input', function(event) {
+            let form = event.target.form;
+            if (form.checkValidity()) {
+                form.querySelector('button[type="submit"]').disabled = false;
+            } else {
+                form.querySelector('button[type="submit"]').disabled = true;
+            }
+        });
+    
+        // Habilitar o deshabilitar el envío según la validación
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            if (!event.target.checkValidity()) {
+                event.preventDefault(); // Prevenir envío si no es válido
+                event.target.classList.add('was-validated');
+            }
+        });
+    </script>
+
+ <!-- Footer -->
+ <footer class="bg-dark text-white">
+    <div class="container p-5">
+        <div class="row">
+            <!-- Sobre Nosotros -->
+            <div class="col-lg-4 mb-4">
+                <h5 class="text-uppercase text-center">Sobre Nosotros</h5>
+                <p class="text-justify">
+                    En <strong>UTN Refacciones</strong>, somos expertos en refacciones y mantenimiento para motocicletas. 
+                    Con años de experiencia, ofrecemos soluciones rápidas, confiables y de calidad, comprometidos a mantener tu moto en excelente estado.
+                </p>
+            </div>
+
+            <!-- Enlaces rápidos -->
+            <div class="col-lg-4 mb-4">
+                <h5 class="text-uppercase text-center">Enlaces Rápidos</h5>
+                <ul class="list-unstyled text-center">
+                    <li><a href="index.html" class="text-white text-decoration-none">Inicio</a></li>
+                    <li><a href="Nosotros.html" class="text-white text-decoration-none">Sobre Nosotros</a></li>
+                    <li><a href="Servicios.html" class="text-white text-decoration-none">Servicios</a></li>
+                    <li><a href="Contacto.html" class="text-white text-decoration-none">Contacto</a></li>
+                </ul>
+            </div>
+
+            <!-- Redes sociales -->
+            <div class="col-lg-4 mb-4">
+                <h5 class="text-uppercase text-center">Síguenos</h5>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="#" class="text-white text-decoration-none"><i class="fab fa-twitter"></i> Twitter</a>
+                    <a href="#" class="text-white text-decoration-none"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="#" class="text-white text-decoration-none"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="#" class="text-white text-decoration-none"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Derechos de autor -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        <p class="mb-1">
+            ¿Tienes preguntas o necesitas ayuda? <a href="Contacto.html" class="text-white text-decoration-none">Contáctanos</a>.
+        </p>
+        <p class="mb-0">
+            &copy; 2024 <strong>UTN Refacciones</strong>. Diseñado por Montiel Olguín Gabriel. Todos los derechos reservados.
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>

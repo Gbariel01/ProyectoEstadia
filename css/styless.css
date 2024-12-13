@@ -1,0 +1,74 @@
+/*ESTILO PARA LAS IMAGENES DEL CARRUSEL*/
+/* Establecer un tamaño fijo para las imágenes del carrusel */
+.carousel-inner .carousel-item img {
+    object-fit: cover;  /* Asegura que la imagen cubra completamente el espacio sin distorsionarse */
+    width: 100%;        /* La imagen se ajustará al 100% del contenedor */
+    height: 500px;      /* Establece una altura fija para todas las imágenes */
+}
+
+/* Si quieres que las imágenes se ajusten de manera más fluida a un contenedor sin desbordarse */
+.carousel-inner {
+    max-height: 500px; /* Define la altura máxima del carrusel */
+    overflow: hidden;  /* Oculta las partes de la imagen que se desborden */
+}
+
+
+
+
+/* Aseguramos que el video ocupe todo el ancho disponible */
+.embed-responsive-16by9 {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+}
+
+.embed-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+/*ESTILO DE TARJETAS INDEX */
+.card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px; /* Ajusta este valor al tamaño deseado */
+    object-fit: cover; /* Para mantener las proporciones de la imagen */
+}
+
+.card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.card-text {
+    margin-bottom: 1rem;
+}
+
+.card .btn {
+    align-self: center;
+}
+
+/*tarjetas estilos*/
+.card-img-top {
+    width: 100%; /* Se ajusta al ancho de la tarjeta */
+    height: 150px; /* Tamaño fijo para todas las imágenes */
+    object-fit: cover; /* Escala la imagen sin distorsionarla */
+}
